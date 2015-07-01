@@ -1,0 +1,39 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+        <style type="text/css">
+            p {
+                font-size: 36px;
+            }
+            p::first-letter {
+                font-size: 24px;
+                float: left;
+            }
+            p::first-line {
+                font-weight: bold;
+            }  
+            blockquote::after {
+                content: close-quote;
+            }
+            blockquote::before {
+                content: open-quote;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>
+                First Line in First Paragraph<br>
+                Second Line in First Paragraph
+            </p>
+            <p>
+                First Line in Second Paragraph<br>
+                Second Line in Second Paragraph
+            </p>
+            <blockquote>
+                <p>This is a content of the blockquote.</p>
+            </blockquote>
+        </div>
+    </body>
+    </html>

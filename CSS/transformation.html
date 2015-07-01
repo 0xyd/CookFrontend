@@ -1,0 +1,50 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+        <style type="text/css">
+            div {
+                height: 100px;
+                width: 100px;
+            }
+            .wrapper {
+                height: 200px;
+                margin: 25px 0px;
+            }
+            .wrapper > div {
+                margin-right: auto;
+                margin-left: auto;
+            }
+            #rotating {
+                background-color: red;
+                transform: rotate(-100deg);
+            }
+            #skewing {
+                background-color: blue;
+                transform: skewX(10deg);
+            }
+            #scaling {
+                background-color: orange;
+                transform: scale(4, 0.5);
+            }
+            #translating {
+                background-color: green;
+                transform: translate(200px, 100px);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="rotating"></div>
+        </div>
+        <div class="wrapper">
+            <div id="skewing"></div>
+        </div>
+        <div class="wrapper">
+            <div id="scaling"></div>
+        </div>
+        <div class="wrapper" style="background-color: red;">
+            <div id="translating"></div>
+        </div>
+    </body>
+    </html>

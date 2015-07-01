@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Basic Geometry</title>
+	<style type="text/css">
+		.geo-wrapper {
+			margin: 50px 0;
+		}
+		.geo-wrapper > div {
+			margin: 0 auto;
+		}
+		.geo-wrapper {
+			text-align: center;
+		}
+		.info {
+			font-size: 20px;
+		}
+		#square {
+			background-color: red;
+			height: 100px;
+			width: 100px;
+		}
+		#circle {
+			background-color: blue;
+			height: 100px;
+			width: 100px;
+			border-radius: 50px;
+		}
+		#oval {
+			background-color: green;
+			height: 100px;
+			width: 200px;
+			border-radius: 100px / 50px;
+			/* oval formula: [width/2]px / [height/2]px; */
+		}
+		#oval2 {
+			background-color: orange;
+			height: 50px;
+			width: 200px;
+			border-radius: 100px / 25px;
+		}
+		#up-triangle {
+			width: 0;
+			height: 0;
+			border-left: 50px solid transparent;
+			border-right: 50px solid transparent;
+			border-bottom: 100px solid red;
+		}
+		#down-triangle {
+			width: 0;
+			height: 0;
+			border-left: 50px solid transparent;
+			border-right: 50px solid transparent;
+			border-top: 100px solid blue;
+		}
+		#left-triangle {
+			width: 0;
+			height: 0;
+			border-right: 100px solid green;
+			border-bottom: 50px solid transparent;
+			border-top: 50px solid transparent;
+		}
+		#right-triangle {
+			width: 0;
+			height: 0;
+			border-left: 100px solid orange;
+			border-bottom: 50px solid transparent;
+			border-top: 50px solid transparent;
+		}
+		#top-left-triangle {
+			width: 0;
+			height: 0;
+			border-right: 100px solid transparent;
+			border-top: 100px solid red;
+		}
+		#top-right-triangle {
+			width: 0;
+			height: 0;
+			border-left: 100px solid transparent;
+			border-top: 100px solid blue;
+		}
+		#bottom-left-triangle {
+			width: 0;
+			height: 0;
+			border-right: 100px solid transparent;
+			border-bottom: 100px solid green;
+		}
+		#bottom-right-triangle {
+			width: 0;
+			height: 0;
+			border-left: 100px solid transparent;
+			border-bottom: 100px solid orange;
+		}
+		#equilateral-triangle {
+			width: 0;
+			border-bottom: 100px solid #213BB4;
+			border-right: 57.735px solid transparent;
+			border-left: 57.735px solid transparent;
+		}
+		#trapezoid {
+			width: 100px;
+			border-bottom: 100px solid red;
+			border-left: 40px solid transparent;
+			border-right: 40px solid transparent;
+		}
+		#parallelogram {
+			background-color: blue;
+			width: 120px;
+			height: 100px;
+			transform: skew(20deg, 0deg);
+		}
+		#parallelogram_2 {
+			background-color: green;
+			width: 120px;
+			height: 100px;
+			transform: skew(0deg, 20deg);
+		}
+		#star-six {
+			width: 0;
+			border-bottom: 100px solid red;
+			border-right: 50px solid transparent;
+			border-left: 50px solid transparent;
+			position: relative;
+		}
+		#star-six::after {
+			content: "";
+			width: 0;
+			border-top: 100px solid red;
+			border-right: 50px solid transparent;
+			border-left: 50px solid transparent;
+			position: absolute;
+			top: 30px;
+			left: -50px;
+		}
+		#star-five {
+			/*margin: 50px 0;*/
+			position: relative;
+			display: block;
+			color: red;
+			width: 0px;
+			height: 0px;
+			border-right:  100px solid transparent;
+			border-bottom: 70px  solid red;
+			border-left:   100px solid transparent;
+			-moz-transform:    rotate(35deg);
+			-webkit-transform: rotate(35deg);
+			-ms-transform:     rotate(35deg);
+			-o-transform:      rotate(35deg);
+			transform:         rotate(35deg);
+			/*transform: rotate(180deg);*/
+
+		}
+		#star-five::after {
+			border-bottom: 80px solid red;
+			border-left: 30px solid transparent;
+			border-right: 30px solid transparent;
+			position: absolute;
+			height: 0;
+			width: 0;
+			top: -45px;
+			left: -65px;
+			display: block;
+			content: '';
+			-webkit-transform: rotate(-35deg);
+			-moz-transform:    rotate(-35deg);
+			-ms-transform:     rotate(-35deg);
+			-o-transform:      rotate(-35deg);
+
+		}
+		#star-five::before {
+			position: absolute;
+			display: block;
+			color: red;
+			top: 3px;
+			left: -105px;
+			width: 0px;
+			height: 0px;
+			border-right: 100px solid transparent;
+			border-bottom: 70px solid red;
+			border-left: 100px solid transparent;
+			-webkit-transform: rotate(-70deg);
+			-moz-transform:    rotate(-70deg);
+			-ms-transform:     rotate(-70deg);
+   			-o-transform:      rotate(-70deg);
+   			content: '';
+		}
+		#pentagon {
+			position: relative;
+			width: 54px;
+			border-width: 50px 18px 0px;
+			border-style: solid;
+			border-color: orange transparent;
+		}
+		#pentagon:before {
+			content: "";
+		    position: absolute;
+		    height: 0;
+		    width: 0;
+		    top: -85px;
+		    left: -18px;
+		    border-width: 0 45px 35px;
+		    border-style: solid;
+		    border-color: transparent transparent orange;
+		}
+		#tag {
+			height: 80px;
+			width: 40px;
+			background-color: #444;
+			position: relative;
+			transition: top 1s linear 0s;
+		}
+		#tag::after {
+			content: '';
+			position: absolute;
+			border-bottom: 20px solid #fff;
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			top: 60px;
+			left: 0px;
+		}
+		#tag:active {
+			top: -3px;
+			background-color: #08c;
+		}
+		#heart {
+			position: relative;
+		    width: 100px;
+		    height: 90px;
+		}
+		#heart::before, #heart::after {
+			position: absolute;
+		    content: "";
+		    left: 50px;
+		    top: 0;
+		    width: 50px;
+		    height: 80px;
+		    background: red;
+		    -moz-border-radius: 50px 50px 0 0;
+		    border-radius: 50px 50px 0 0;
+		    /* Change the transfrom origin from the object center to the object's left bottom*/
+		    -webkit-transform-origin: 0 100%;
+		       -moz-transform-origin: 0 100%;
+		        -ms-transform-origin: 0 100%;
+		         -o-transform-origin: 0 100%;
+		            transform-origin: 0 100%;
+		    -webkit-transform: rotate(-45deg);
+		       -moz-transform: rotate(-45deg);
+		        -ms-transform: rotate(-45deg);
+		         -o-transform: rotate(-45deg);
+		            transform: rotate(-45deg);
+		    
+		}
+		#heart::after {
+			left: 0;
+			/* Change the transform origin to the object's right bottom corner. */
+			-webkit-transform-origin: 100% 100%;
+		       -moz-transform-origin: 100% 100%;
+		        -ms-transform-origin: 100% 100%;
+		         -o-transform-origin: 100% 100%;
+		            transform-origin :100% 100%;
+		    -webkit-transform: rotate(45deg);
+		       -moz-transform: rotate(45deg);
+		        -ms-transform: rotate(45deg);
+		         -o-transform: rotate(45deg);
+		            transform: rotate(45deg);
+		    
+		}
+		#infinity {
+			position: relative;
+    		width: 212px;
+    		height: 100px;
+		}
+		#infinity:before,
+		#infinity:after {
+		    content: "";
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 60px;
+		    height: 60px;
+		    border: 20px solid #07c;
+			-moz-border-radius: 50px 50px 0 50px;
+	        border-radius: 50px 50px 0 50px;
+	    	-webkit-transform: rotate(-45deg);
+	           -moz-transform: rotate(-45deg);
+	            -ms-transform: rotate(-45deg);
+	             -o-transform: rotate(-45deg);
+	                transform: rotate(-45deg);
+		}
+		#infinity:after {
+		    left: auto;
+		    right: 0;
+		    /* Overwirte the "before" style */
+		    -moz-border-radius: 50px 50px 50px 0;
+		         border-radius: 50px 50px 50px 0;
+		    -webkit-transform: rotate(45deg);
+		       -moz-transform: rotate(45deg);
+		        -ms-transform: rotate(45deg);
+		         -o-transform: rotate(45deg);
+		            transform: rotate(45deg);
+		}
+		#isreal {
+			width: 0;
+			border-bottom: 100px solid #213BB4;
+			border-right: 57.735px solid transparent;
+			border-left: 57.735px solid transparent;
+			position: relative;
+		}
+		#isreal-inner {
+			width: 0;
+			border-bottom: 75px solid #fff;
+			border-right: 43.30125px solid transparent;
+			border-left: 43.30125px solid transparent;
+			position: absolute;
+			left: -42.6px;
+			top: 17px;
+			z-index: 1000;
+		}
+		#isreal::after {
+			content: "";
+			width: 0;
+			border-top: 100px solid #213BB4;
+			border-right: 57.735px solid transparent;
+			border-left: 57.735px solid transparent;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div class="geo-wrapper">
+		<div id="square"></div>
+		<p class="info">Square</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="circle"></div>
+		<p class="info">Circle</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="oval"></div>
+		<p class="info">Oval</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="oval2"></div>
+		<p class="info">Oval 2</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="up-triangle"></div>
+		<p class="info">Up-triangle</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="down-triangle"></div>
+		<p class="info">down-triangle</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="left-triangle"></div>
+		<p class="info">left-triangle</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="right-triangle"></div>
+		<p class="info">right-triangle</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="top-left-triangle"></div>
+		<p class="info">top-left-triangle</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="top-right-triangle"></div>
+		<p class="info">top-right-triangle</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="bottom-left-triangle"></div>
+		<p class="info">bottom-left-triangle</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="bottom-right-triangle"></div>
+		<p class="info">bottom-right-triangle</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="equilateral-triangle"></div>
+		<p class="info">equilateral-triangle</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="trapezoid"></div>
+		<p class="info">trapezoid</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="parallelogram"></div>
+		<p class="info">parallelogram</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="parallelogram_2"></div>
+		<p class="info">parallelogram_2</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="star-six"></div>
+		<p class="info">star-six</p>
+	</div>
+	<!-- <div class="geo-wrapper">
+		<div id="isreal">
+			<div id="isreal-inner"></div>
+		</div>
+		<p class="info">isreal</p>
+	</div> -->
+	<div class="geo-wrapper">
+		<div id="star-five"></div>
+		<p class="info">star-five</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="pentagon"></div>
+		<p class="info">pentagon</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="tag"></div>
+		<p class="info">tag</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="heart"></div>
+		<p class="info">heart</p>
+	</div>
+	<div class="geo-wrapper">
+		<div id="infinity"></div>
+		<p class="info">infinity</p>
+	</div>
+</body>
+</html>

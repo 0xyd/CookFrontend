@@ -1,0 +1,37 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+        <style type="text/css">
+            div {
+                height: 100px;
+                width: 100px;
+            }
+            .wrapper {
+                height: 200px;
+                margin: 100px auto;
+            }
+            .wrapper > div {
+                margin-right: auto;
+                margin-left: auto;
+            }
+            #rotating {
+                background-color: red;
+                transform: rotate(100deg);
+            }
+            #o-rotating {
+                background-color: blue;
+                transform-origin: 20px 0;
+                transform: rotate(100deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="rotating"></div>
+        </div>
+        <div class="wrapper">
+            <div id="o-rotating"></div>
+        </div>
+    </body>
+    </html>

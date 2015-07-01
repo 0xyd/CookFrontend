@@ -1,0 +1,36 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+        <style type="text/css">
+            div {
+                height: 100px;
+                width: 100px;
+            }
+            .wrapper {
+                height: 200px;
+                margin: 100px auto;
+            }
+            .wrapper > div {
+                margin-right: auto;
+                margin-left: auto;
+            }
+            #mult_1 {
+                background-color: red;
+                transform: rotate(100deg) scale(1.5, 2);
+            }
+            #mult_2 {
+                background-color: blue;
+                transform: scale(1.5, 2) rotate(100deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="mult_1"></div>
+        </div>
+        <div class="wrapper">
+            <div id="mult_2"></div>
+        </div>
+    </body>
+    </html>

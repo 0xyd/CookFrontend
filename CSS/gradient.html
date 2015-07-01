@@ -1,0 +1,60 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+        <style type="text/css">
+            div {
+                height: 100px;
+                width: 100px;
+            }
+            .wrapper {
+                height: 200px;
+                margin: 100px auto;
+            }
+            .wrapper > div {
+                margin-right: auto;
+                margin-left: auto;
+            }
+            #linear-gradient {
+                background: 
+                linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet);
+            }
+            #linear-gradient-2 {
+                background: 
+                linear-gradient(20deg,red,orange,yellow,green,blue,indigo,violet);
+            }
+            #radial-gradient {
+                background: radial-gradient(red, yellow, blue);
+            }
+            #repeat-linear-gradient {
+                background: repeating-linear-gradient(to top left, red, red 5px, white 5px, white 10px);
+            }
+            #repeat-radial-gradient {
+                background: repeating-radial-gradient(circle at 0 0, #eee, #ccc 50px);
+            }
+            #repeat-radial-gradient-2 {
+                background: repeating-radial-gradient(circle at bottom right, #eee, #ccc 50px);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="linear-gradient"></div>
+        </div>
+        <div class="wrapper">
+            <div id="linear-gradient-2"></div>
+        </div>
+        <div class="wrapper">
+            <div id="radial-gradient"></div>
+        </div>
+        <div class="wrapper">
+            <div id="repeat-linear-gradient"></div>
+        </div>
+        <div class="wrapper">
+            <div id="repeat-radial-gradient"></div>
+        </div>
+        <div class="wrapper">
+            <div id="repeat-radial-gradient-2"></div>
+        </div>
+    </body>
+    </html>

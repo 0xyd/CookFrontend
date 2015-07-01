@@ -1,0 +1,46 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+        <style type="text/css">
+            div {
+                height: 100px;
+            }
+            section {
+                height: 50px;
+            }
+            body > div {
+                background-color: green;
+            }
+            div#test1 {
+                background-color: blue;
+            }
+            div#test1.oldclassname {
+                text-align: center;
+                font-size: 24px;
+            }
+            div#test1.oldclassname p {
+                font-size: 36px;
+            }
+            .classname.anotherclassname {
+                background-color: orange;
+            }
+            .classname {
+                background-color: red;
+            }
+            .anotherclassname {
+                background-color: purple;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="test1" class="oldclassname">
+            <section class="classname anotherclassname">
+                <p>Testing</p>
+            </section>
+        </div>
+        <div id="test2">
+            <section class="classname"></section>
+        </div>
+    </body>
+    </html>

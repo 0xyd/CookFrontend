@@ -1,0 +1,59 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+        <style type="text/css">
+            a:link {
+                transition: font-size 5s linear 0s;
+                font-size: 14px;
+            }
+            a:hover {
+                font-size: 26px;
+            }
+            blockquote {
+                transition: all 3s ease 0s;
+                font-size: 14px;
+                color: #08c;
+
+            }
+            blockquote:hover {
+                font-size: 28px;
+                color: #09d;
+            }
+            #testEaseOut {
+                transition: font-size 5s ease-out 0s, margin-left 3s ease-out 0s;
+                font-size: 12px;
+                margin-left: 0px;
+            }
+            #testEaseOut:hover {
+                font-size: 30px;
+                margin-left: 20px;
+            }
+            #testEaseInOut {
+                transition: all 3s ease-in-out 0s;
+                font-size: 12px;
+                margin-left: 0px;
+                color: green;
+            }
+            #testEaseInOut:hover {
+                font-size: 36px;
+                margin-left: 20px;
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <a href="http://www.google.com">linear</a>
+        </div>
+        <div>
+            <blockquote>Ease</blockquote>
+        </div>
+        <div>
+            <p id="testEaseOut">Ease-Out</p>
+        </div>
+        <div>
+            <p id="testEaseInOut">Ease-in-Out</p>
+        </div>
+    </body>
+    </html>
