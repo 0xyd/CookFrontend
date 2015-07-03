@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery-1.11.1.min.js"></script>
+        <!-- Bootstrap -->
+        <link type="text/css" rel="stylesheet" 
+              href="bootstrap.min.css" >
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="bootstrap.min.js"></script>
+        <style type="text/css">
+            div.carousel.slide {
+                height: 500px;
+                background-color: grey;
+            }
+            div.item-content {
+                text-align: center;
+                padding: 170px;
+                font-size: 2em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row header"></div>
+            <div class="row main">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>                      
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>                        
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="item-content">
+                                <h3>This is a Test Slide</h3>
+                                <p>I am Learning Bootstrap.</p>
+                                <a href="#" class="btn btn-info">Test 1</a>
+                            </div>
+                        </div>                        
+                        <div class="item">
+                            <div class="item-content">
+                                <h3>This is a Test Slide</h3>
+                                <p>Learning Bootstrap is really fun.</p>
+                                <a href="#" class="btn btn-danger">Test 2</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-content">
+                                <h3>This is a Test Slide</h3>
+                                <p>I love Bootstrap. It's easy to build a website with it.</p>
+                                <a href="#" class="btn btn-warning">Test 3</a>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>  
+            </div>
+            <div class="row footer"></div>
+        </div>
+    </body>
+</html>

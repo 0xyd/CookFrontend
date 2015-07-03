@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="jquery-1.11.1.min.js"></script>
+		<!-- Bootstrap -->
+    	<link type="text/css" rel="stylesheet" 
+    		  href="bootstrap.min.css" >
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="bootstrap.min.js"></script>
+        <style type="text/css">
+        	.container-fluid { padding-right: 0px; padding-left: 0px; }
+        	.header-item-navbar-ullist { float: right; }
+        	.header-item-navbar-ullist li { display: inline-block; padding: 20px 10px;}
+			#travel { background-color: red; }
+			#study { background-color: blue; }
+			#career { background-color: green; }
+			#info { background-color: orange; } 
+			.main-left-imgframe {
+				border-radius: 100px;
+			}
+
+        </style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row header">
+				<div class="col-md-3 header-item"><p >I am David</p></div>
+				<div class="col-md-9 header-item">
+					<nav class="col-md-12 header-item-navbar">
+						<ul class="col-md-7 header-item-navbar-ullist">
+							<li id="travel" class="col-md-3">Travel</li>
+							<li id="study" class="col-md-3">Study</li>
+							<li id="career" class="col-md-3">Career</li>
+							<li id="info" class="col-md-3">Contant Info</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="row main">
+				<div class="main-left" style="text-align: center;">
+					<img class="main-left-imgframe" 
+						 height="200px" width="200px" src="IMG_4315.JPG"/>
+				</div>
+			</div>
+			<div class="row footer"></div>
+		</div>
+	</body>
+</html>
