@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery-1.11.1.min.js"></script>
+        <!-- Bootstrap -->
+        <link type="text/css" rel="stylesheet" 
+              href="bootstrap.min.css" >
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="bootstrap.min.js"></script>
+        <style type="text/css">
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row header"></div>
+            <div class="row main">
+                <ul id="myTabs" class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#Profile" role="tab" data-toggle="tab" aria-controls="Profile">
+                            Profile
+                        </a>
+                    </li>                  
+                    <li role="presentation">
+                        <a href="#Travel" role="tab" data-toggle="tab" aria-controls="Travel">
+                            Travel
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#Career" role="tab" data-toggle="tab" aria-controls="Career">
+                            Career
+                        </a>
+                    </li>                    
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="Profile">
+                        <h2>Profile</h2>
+                        <p>This is my Profile</p>
+                    </div>                    
+                    <div role="tabpanel" class="tab-pane" id="Travel">
+                        <h2>Travel</h2>
+                        <p>This is my Travel</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="Career">
+                        <h2>Career</h2>
+                        <p>This is my Career</p>
+                    </div>                    
+                </div>
+            </div>
+            <div class="row footer"></div>
+        </div>
+    </body>
+</html>
