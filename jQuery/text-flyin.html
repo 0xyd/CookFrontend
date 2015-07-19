@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>text-flyin</title>
+	<style type="text/css">
+		body {
+			position: relative;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+	<script type="text/javascript">
+
+		function createPNode() {
+
+			var bodyNode = $("body"),
+				pNode = document.createElement("p");
+
+				pNode.innerHTML = "testing";
+
+				$(pNode).css({
+					position: "relative",
+					top: "10000px",
+					opacity: 0,
+				});
+
+			bodyNode.append(pNode);
+
+		}
+
+		function doAnimation(count) {
+
+			var lastNode = $("body p").last();
+				pList = document.querySelectorAll("body p"),
+				totalPHeight = 0;
+
+			if (count) {
+				lastNode.animate({
+					opacity: 1,
+					// top: totalPHeight,
+					top: 0
+				}, 1000, function () {
+					count--;
+					createPNode();
+					doAnimation(count);
+				});
+			}
+		}
+
+		$(document).ready(function() {
+
+			// Make 10 elements flying into the page
+			var count = 10;
+
+			createPNode();
+			doAnimation(count);
+
+		});
+	</script>
+</head>
+<body>
+
+</body>
+</html>

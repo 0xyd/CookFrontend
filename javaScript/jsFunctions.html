@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		/* It won't work until you call its name */
+		function firstTest() {
+			console.log(this);
+		}
+
+		/* 
+			It will work immediately. Why? 
+			We want to call a function, we will simply use "functionName();" to call it.
+			Here, we use the first '(function() {....})' to represent function's name.
+			The second '()' is the place we put the arguments as usual.
+		*/
+		(function() {
+			console.log(this);
+		})();
+
+		/* It will work because we call its name */
+		secondTest = function() {
+			console.log("I am the secondTest Function");
+		}
+
+		secondTest();
+
+	</script>
+</body>
+</html>

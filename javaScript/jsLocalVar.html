@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		(function() {
+			var localVar = "localVar",
+				localVar2 = 123456;
+		})();
+
+		/*
+			There is an error poping out 
+			because the variables only live in the function's domain.
+		*/
+		console.log(localVar);
+		console.log(localVar2);
+	</script>
+</body>
+</html>
