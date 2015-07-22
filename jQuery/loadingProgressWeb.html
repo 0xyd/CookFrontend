@@ -1,0 +1,37 @@
+<!-- Loading animation for Web Loading  -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	html, body, #loading, div.container, iframe {
+		height: 100%;
+	}
+	body, #loading, iframe {
+		margin: 0px;
+		width: 100%;
+	}
+	#loading {
+		background: url('../pics/Preloader_3.gif') 50% 50% no-repeat rgb(249,249,249);
+	}
+	div.container {
+		display: none;
+	}
+	</style>
+	<script type="text/javascript" src="jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+
+		$(window).load(function() {
+			$("#loading").fadeOut(1000, function() {
+				$("div.container").fadeIn(1000, function() {});
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="loading"></div>
+	<div class="container">
+		<iframe src="http://www.w3c.org"></iframe>
+	</div>
+</body>
+</html>

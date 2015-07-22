@@ -1,0 +1,87 @@
+<!-- This is example code is showing how fade works. -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.objectWrapper, .fadeObject { display: inline-block; }
+		.fadeObject {
+			height: 100px;
+			width: 100px;
+			margin: 10px 20px;
+			cursor: pointer;
+		}
+		#object1 { background-color: red; }
+		#object2 { background-color: blue; display: none; }
+		#object3 { background-color: green; }
+		#object4 { background-color: black; }		
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="objectWrapper">
+			<div id="object1" class="fadeObject">
+			</div>
+			<button id="objectBtn1">FadeOut</button>
+		</div>
+		<div class="objectWrapper">
+			<div id="object2" class="fadeObject">
+			</div>
+			<button id="objectBtn2">FadeIn</button>
+		</div>
+		<div class="objectWrapper">
+			<div id="object3" class="fadeObject">
+			</div>		
+			<button id="objectBtn3">Flash</button>
+		</div>
+		<div class="objectWrapper">
+			<div id="object4" class="fadeObject">
+			</div>		
+			<button id="objectBtn4">FadeTo</button>
+		</div>
+	</div>
+	<script type="text/javascript" src="jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+
+		(function() {
+
+			$("#objectBtn1").click(function() {
+
+				/* .fadeOut( [duration ] [, complete ] ) */
+				$("#object1").fadeOut(1000, function() {
+					console.log("Fade Out.");
+				});
+			});
+
+			$("#objectBtn2").click(function() {
+
+				/* .fadeIn( [duration ] [, complete ] ) */
+				$("#object2").fadeIn(1000, function() {
+					console.log("Fade In");
+				});
+			});
+
+			$("#objectBtn3").click(function() {
+
+				var $obj3 = $("#object3");
+
+				$obj3.fadeOut(100, function() {
+					$obj3.fadeIn(100, function() {
+						console.log("flashed!");
+					});
+				});
+			});
+
+			$("#objectBtn4").click(function() {
+
+				/* .fadeTo( duration, opacity [, complete ] ) */
+				$("#object4").fadeTo(1000, 0.3, function() {
+					console.log("Faded To 0.3");
+				});
+			});
+
+		})();
+
+	</script>
+</body>
+</html>

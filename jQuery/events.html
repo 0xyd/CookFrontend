@@ -1,0 +1,237 @@
+<!-- jQuery with Events -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body, .wrapper { width: 100%; }
+		.wrapper {
+			display: block;
+			margin: 20px auto;
+			text-align: center;
+		}
+		.obj {
+			display: inline-block;
+			height: 150px;
+			width: 150px;
+			border: 2px solid #777;
+			margin: 10px 40px;
+			overflow: scroll;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="wrapper">
+			<h3>Click Events</h3>
+			<div id="jqClick" class="obj">
+				<h4>Click Event</h4>
+			</div>	
+			<div id="jqDBClick" class="obj">
+				<h4>Double Click Event</h4>
+			</div>			
+		</div>
+		<div class="wrapper">
+			<h3>Mouse Events 1</h3>
+			<div id="jqHover" class="obj">
+				<h4>Hover</h4>				
+			</div>
+			<div id="jqEnter" class="obj">
+				<h4>Mouse Enter</h4>
+			</div>
+			<div id="jqLeave" class="obj">
+				<h4>Mouse Leave</h4>
+			</div>
+		</div>
+		<div class="wrapper">
+			<h3>Mouse Events 2</h3>
+			<div id="jqUp" class="obj">
+				<h4>Mouse Up</h4>				
+			</div>
+			<div id="jqDown" class="obj">
+				<h4>Mouse Down</h4>
+			</div>
+		</div>
+		<div class="wrapper">
+			<h3>Mouse Events 3</h3>
+			<div id="jqMove" class="obj">
+				<h4>Mouse Move</h4>				
+			</div>
+			<div id="jqOut" class="obj">
+				<h4>Mouse Out</h4>
+			</div>
+			<div id="jqOver" class="obj">
+				<h4>Mouse Over</h4>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+
+		function produceWords(inputNum, inputStr, $object) {
+
+			// Create element p
+			var e = document.createElement("p");
+
+			e.textContent = inputStr + " " + inputNum + " time.";
+			++inputNum;
+			$object.append(e);
+
+			return inputNum
+
+		}
+
+		function clickEvts() {
+			this.$clickObj = $("#jqClick");
+			this.$dbClickObj = $("#jqDBClick");
+		}
+
+		clickEvts.prototype.clickFn = function() {
+
+			var clickNum = 1;
+
+			// Assign a click handler for jqClick object.
+			this.$clickObj.click(function() { 
+
+				clickNum = produceWords(clickNum, " clicked", $(this));
+
+			});
+		};
+
+		clickEvts.prototype.dblClickFn = function() {
+
+			var dblClickNum = 1;
+
+			this.$dbClickObj.dblclick(function() {
+
+				dblClickNum = produceWords(dblClickNum, " double clicked", $(this));
+
+			});
+		};
+
+		function mouseEvts() {
+			this.$mouseHover = $("#jqHover");
+			this.$mouseDown = $("#jqDown");
+			this.$mouseEnter = $("#jqEnter");
+			this.$mouseLeave = $("#jqLeave");
+			this.$mouseMove = $("#jqMove");
+			this.$mouseOut = $("#jqOut");
+			this.$mouseOver = $("#jqOver");
+			this.$mouseUp = $("#jqUp");
+		}
+
+		mouseEvts.prototype.hoverFn = function() {
+
+			var hoverNum = 1;
+
+			// .hover( handlerIn, handlerOut )
+			this.$mouseHover.hover(
+				function() {
+					hoverNum = produceWords(hoverNum, " hover in", $(this));
+				},
+				function() {
+					hoverNum = produceWords(hoverNum, " hover out", $(this));
+				}
+			);
+		};
+
+		mouseEvts.prototype.mouseEnter = function() {
+
+			var mouseEntNum = 1;
+
+			this.$mouseEnter.mouseenter(function() {
+
+				mouseEntNum = produceWords(mouseEntNum, " mouse enters in", $(this));
+
+			});
+		};
+
+		mouseEvts.prototype.mouseLeave = function() {
+
+			var mouseLvNum = 1;
+
+			this.$mouseLeave.mouseleave(function() {
+
+				mouseLvNum = produceWords(mouseLvNum, " mouse leaves", $(this));
+
+			});
+		};
+
+		mouseEvts.prototype.mouseUp = function() {
+
+			var mouseUpNum = 1;
+
+			this.$mouseUp.mouseup(function() {
+
+				mouseUpNum = produceWords(mouseUpNum, " mouse up", $(this));
+
+			});
+		};
+
+		mouseEvts.prototype.mouseDown = function() {
+
+			var mouseDownNum = 1;
+
+			this.$mouseDown.mousedown(function() {
+
+				mouseDownNum = produceWords(mouseDownNum, " mouse down", $(this));
+
+			});
+		};
+
+		mouseEvts.prototype.mouseMove = function() {
+
+			var mouseMoveNum = 1;
+
+			this.$mouseMove.mousemove(function() {
+
+				mouseMoveNum = produceWords(mouseMoveNum, " mouse move", $(this));
+
+			});
+		};
+
+		mouseEvts.prototype.mouseOut = function() {
+
+			var mouseOutNum = 1;
+
+			this.$mouseOut.mousemove(function() {
+
+				mouseOutNum = produceWords(mouseOutNum, " mouse out", $(this));
+
+			});
+		};
+
+		mouseEvts.prototype.mouseOver = function() {
+
+			var mouseOverNum = 1;
+
+			this.$mouseOver.mouseover(function() {
+
+				mouseOverNum = produceWords(mouseOverNum, " mouse over", $(this));
+
+			});
+		};
+
+		(function() {
+
+			var clickEvt = new clickEvts(),
+				mouseEvt = new mouseEvts();
+
+
+			clickEvt.clickFn();
+			clickEvt.dblClickFn();
+
+			mouseEvt.hoverFn();
+			mouseEvt.mouseEnter();
+			mouseEvt.mouseLeave();
+			mouseEvt.mouseUp();
+			mouseEvt.mouseDown();
+			mouseEvt.mouseMove();
+			mouseEvt.mouseOut();
+			mouseEvt.mouseOver();
+
+		})();
+
+	</script>
+</body>
+</html>
